@@ -1,4 +1,4 @@
-﻿// Задача 1. Программа задает массив из 8 элементов, заполняет его нулями и единицами и вывести их на экран.
+﻿// Задача 1. Программа задает массив из 8 элементов, заполняет его нулями и единицами и выводит их на экран.
 
 int[] FillArray (int size, int min, int max)
 {
@@ -28,9 +28,7 @@ int[] CreateArray (int size, int minValue, int maxValue)
 {
     int[] array = new int [size];
     for(int i = 0; i < array.Length; i++)
-    {
         array[i] = new Random() .Next(minValue,maxValue+1);
-    }
     return array;
 }
 
@@ -44,12 +42,7 @@ void PrintArray(int[] array)
 bool IsExistElement(int[] array, int n)
 {
     for(int i = 0; i < array.Length; i++)
-    {
-        if(array[i] == n)
-        {
-            return true;
-        }
-    }
+        if(array[i] == n) return true;
     return false;
 }
 
@@ -59,29 +52,25 @@ PrintArray(myArray);
 Console.WriteLine("Input number ");
 int num = Convert.ToInt32(Console.ReadLine());
 
-if(IsExistElement(myArray, num)) Console.WriteLine("Element exist");
-else Console.WriteLine("Where is no element");
+if(IsExistElement(myArray, num)) Console.WriteLine($"Element {num} is here!");
+else Console.WriteLine($"Element {num} is not exist in this array!");
 
-// Задача 3. Задать массив, заполнить случайными положительными трёхзначными числами. 
-// Показать количество нечетных\четных чисел
+Задача 3. Задать массив, заполнить случайными положительными трёхзначными числами. 
+Показать количество нечетных\четных чисел
 
 int[] FillThreeDigitNum (int size, int minValue, int maxValue)
 {
     int[] newArray = new int[size];
 
     for(int i = 0; i < newArray.Length; i++)
-    {
-        newArray[i] = new Random() .Next(minValue, maxValue);
-    }
+        newArray[i] = new Random() .Next(minValue, maxValue+1);
     return newArray;
 }
 
 void ShowArray (int[] array)
 {
     for(int i = 0; i < array.Length; i++)
-    {
         Console.Write(array[i] + " " );
-    }
     Console.WriteLine();
 }
 
@@ -91,10 +80,7 @@ int ShowAmountEven (int[] array)
     
     for(int i = 0; i < array.Length; i++)
     {
-        if(array[i] % 2 == 0)
-        {
-            sum++;
-        }
+        if(array[i] % 2 == 0) sum++;
     }
     return sum;
 }
@@ -113,7 +99,7 @@ int ShowAmountOdd (int[] array)
     return sum;
 }
 
-int[] myArray = FillThreeDigitNum(12, 100, 1000);
+int[] myArray = FillThreeDigitNum(12, 100, 998);
 ShowArray(myArray);
 
 int sumEven = ShowAmountEven(myArray);
@@ -294,7 +280,4 @@ PrintArray(someArray);
 
 double num = DiffMinMax(someArray);
 Console.WriteLine("The difference between the largest and smallest array element is " + "{0:0.##}", num);
-    
-    
-
 
