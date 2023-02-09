@@ -46,7 +46,7 @@ for (int i = 1; i <= length; i++)
 
 // Задача 3. Программа принимает на вход координаты фигуры - (0,0) (2,0) (2,2) (0,2) и масштабирует фигуру.
 
-double[] Scaling(double[] array, double n)
+double[] ScaleOfFig(double[] array, double n)
 {
     double[] newArray = new double[array.Length];
 
@@ -57,7 +57,7 @@ double[] Scaling(double[] array, double n)
     return newArray;
 }
 
-void PrintArray(double[] array)
+void PrintResultScal(double[] array)
 {   
     double x1 = array[0];
     double y1 = array[1];
@@ -71,10 +71,12 @@ void PrintArray(double[] array)
     Console.WriteLine($"({x1}, {y1}) ({x2}, {y2}) ({x3}, {y3}) ({x4}, {y4})");
 }
 
-double[] myArray = {0, 0, 2, 0, 2, 2, 0, 2};
+double[] coordinates = {0, 0, 2, 0, 2, 2, 0, 2}; // координаты точек фигуры по умолчанию
+
 Console.WriteLine("Input coef of scaling: ");
 double coef = Convert.ToDouble(Console.ReadLine());
-PrintArray(Scaling(myArray, coef));
+
+PrintResultScal(ScaleOfFig(coordinates, coef));
 
 // string Scaling(double x1, double y1, double x2, double y2, 
 // double x3, double y3, double x4, double y4, double k)
