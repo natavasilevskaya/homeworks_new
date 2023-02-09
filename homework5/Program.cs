@@ -48,9 +48,9 @@ for (int i = 1; i <= length; i++)
 
 double[] Scaling(double[] array, double n)
 {
-    double[] newArray = new double[8];
+    double[] newArray = new double[array.Length];
 
-    for(int i = 0; i < array.Length-1; i++)
+    for(int i = 0; i < array.Length; i++)
     {
         newArray[i] = array[i] * n;
     }
@@ -59,54 +59,39 @@ double[] Scaling(double[] array, double n)
 
 void PrintArray(double[] array)
 {   
-    int j = 1;
-    double[] myArray = new double[array.Length-1];
-   
-    for (int i = 0; i < (array.Length-1); i++)
-    {
-        if(i % 2 == 0)
-        {
-            array[i] = array[i];
-        }
-        // else if ((i % 2 > 0))
-        //     myArray[i] = array[i];
-        // j++;
-            Console.Write(array[i] + " ");
-    }
-    Console.Write(array[i] + " ");
-}     
-Console.WriteLine();
-    // double x1 = array[0];
-    // double y1 = array[1];
-    // double x2 = array[2];
-    // double y2 = array[3];
-    // double x3 = array[4];
-    // double y3 = array[5];
-    // double x4 = array[6];
-    // double y4 = array[7];
+    double x1 = array[0];
+    double y1 = array[1];
+    double x2 = array[2];
+    double y2 = array[3];
+    double x3 = array[4];
+    double y3 = array[5];
+    double x4 = array[6];
+    double y4 = array[7];
 
-    // Console.WriteLine($"({x1}, {y1}) ({x2}, {y2}) ({x3}, {y3}) ({x4}, {y4})");
-
-
-double[] myArray = {0, 0, 2, 0, 2, 2, 0, 2};
-PrintArray(Scaling(myArray, 2));
-
-string Scaling(double x1, double y1, double x2, double y2, 
-double x3, double y3, double x4, double y4, double k)
-{
-    x1 = x1 * k;
-    y1 = y1 * k;
-    x2 = x2 * k;
-    y2 = y2 * k;
-    x3 = x3 * k;
-    y3 = y3 * k;
-    x4 = x4 * k;
-    y4 = y4 * k;
-    
-    return $"({x1}, {y1}) ({x2}, {y2}) ({x3}, {y3}) ({x4}, {y4})";
+    Console.WriteLine($"({x1}, {y1}) ({x2}, {y2}) ({x3}, {y3}) ({x4}, {y4})");
 }
 
-Console.WriteLine(Scaling(0, 0, 2, 0, 2, 2, 0, 2, 0.5));
+double[] myArray = {0, 0, 2, 0, 2, 2, 0, 2};
+Console.WriteLine("Input coef of scaling: ");
+double coef = Convert.ToDouble(Console.ReadLine());
+PrintArray(Scaling(myArray, coef));
+
+// string Scaling(double x1, double y1, double x2, double y2, 
+// double x3, double y3, double x4, double y4, double k)
+// {
+//     x1 = x1 * k;
+//     y1 = y1 * k;
+//     x2 = x2 * k;
+//     y2 = y2 * k;
+//     x3 = x3 * k;
+//     y3 = y3 * k;
+//     x4 = x4 * k;
+//     y4 = y4 * k;
+    
+//     return $"({x1}, {y1}) ({x2}, {y2}) ({x3}, {y3}) ({x4}, {y4})";
+// }
+
+// Console.WriteLine(Scaling(0, 0, 2, 0, 2, 2, 0, 2, 0.5));
 
 // Задача 4. Программа принимает на вход массив, создает его копию и выводит ее на экран
 
