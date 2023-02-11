@@ -1,26 +1,26 @@
 ﻿
-// Задача 1. Программа задает двумерный массив mxn и заполненняем его случайными целыми числами.
+// Задача 1. Программа задает двумерный массив mxn и заполненняем его случайными вещественными числами.
 
 // двумерный массив - это матрица, табличное представление, которое формируется из системы строки-столбцы, а обращение к элементам происходит уже по 
 // двум индексам - строки и столбцы - row and columns
 
-int[,] CreateRandom2DArray(int rows, int columns, int minValue, int maxValue)
+double[,] CreateRandom2DArray(int rows, int columns)
 {
 
-    int[,] myArray = new int[rows, columns];
+    double[,] myArray = new double[rows, columns];
 
     for (int i = 0; i < rows; i++)
         for (int j = 0; j < columns; j++)
-            myArray[i, j] = new Random().Next(minValue, maxValue + 1);
+            myArray[i, j] = new Random().Next(1,9) + new Random().NextDouble();
     return myArray;
 }
 
-void Print2DArray(int[,] array)
+void Print2DArray(double[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
-            Console.Write(array[i, j] + " ");
+            Console.Write("{0:0.#} ", array[i, j] );
         Console.WriteLine();
     }
 }
@@ -30,8 +30,9 @@ int m = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Input number of columns: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
-int[,] myArray = CreateRandom2DArray(m, n, 1, 9);
+double[,] myArray = CreateRandom2DArray(m, n);
 Print2DArray(myArray);
+
 
 // Задача 2.Программа задает двумерный массив m на n правилом: Aₘₙ = m + n и выводит его в терминал
 
