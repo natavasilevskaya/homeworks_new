@@ -132,7 +132,6 @@ void Print2DArray(int[,] array)
             Console.Write(array[i, j] + " ");
         Console.Write("-> " + SummRow(array, i));
         Console.WriteLine();
-        //Console.WriteLine(Print2DArrayAndSumOfRows(array));
     }
 }
 
