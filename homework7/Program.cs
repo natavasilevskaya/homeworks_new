@@ -171,7 +171,7 @@ int Sum(int[,] array)
         if (sum < minSum)
         {
             minSum = sum;
-            minNum = i;cd
+            minNum = i;
         }
         sum = 0;
     }
